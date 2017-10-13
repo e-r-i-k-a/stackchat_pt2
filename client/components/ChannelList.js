@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import store from '../store';
 import {connect} from 'react-redux';
 
 export function ChannelList (props) {
@@ -15,7 +14,7 @@ export function ChannelList (props) {
                 <span className="badge">{props.messages.filter(message => message.channelId === channel.id).length}</span>
               </NavLink>
              </li>
-          )
+          );
         })
       }
       <li>
@@ -34,7 +33,7 @@ const mapStateToProps = function (state) {
   };
 };
 
-const ChannelListContainer = connect(mapStateToProps)(ChannelList)
+const ChannelListContainer = connect(mapStateToProps)(ChannelList);
 //connect will return another function - that is passed ChannelList.
 //the result is stored in a variable called ChannelListContainer.
 
